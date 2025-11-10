@@ -1,224 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Family Trip to Jaisalmer, Rajasthan</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #fffaf0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Diwali: The Festival of Lights 🌟</title>
+    
+    <style>
+        /* MINIMAL CSS FOR FESTIVE LOOK AND BASIC LAYOUT */
+        
+        @import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Inter:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFF8E1; /* Very Light Yellow/Cream */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
 
-    header {
-      background: url('./1.jpg') center/cover no-repeat;
-      color: white;
-      text-align: center;
-      padding: 150px 20px 70px 20px;
-    }
+        /* Festive Title Font */
+        .festive-title {
+            font-family: 'Marcellus SC', serif;
+            letter-spacing: 0.1em;
+        }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-      text-shadow: 2px 2px 4px #000;
-    }
+        /* Header Styling */
+        header {
+            background-color: #FF6600; /* Vibrant Orange */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
 
-    header p {
-      font-size: 1.2em;
-      text-shadow: 1px 1px 3px #000;
-    }
+        header h1 {
+            color: #FFFFCC; /* Pale Yellow/Gold for contrast */
+            padding: 15px 10px;
+            text-align: center;
+            font-size: 2em;
+        }
+        
+        /* Navigation Styling - UPDATED FOR PROPER LOOK */
+        #main-nav {
+            background-color: #CC0000; /* Deep Red */
+            padding: 10px 0;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
 
-    nav {
-      background-color: #deb887;
-      padding: 10px;
-      text-align: center;
-    }
+        #nav-links {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0 10px;
+            gap: 10px; /* Use gap for cleaner spacing between links */
+        }
 
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #5a2d0c;
-      font-weight: bold;
-    }
+        .nav-link {
+            color: #FFFFCC;
+            font-weight: 700; /* Explicit bold weight */
+            font-size: 0.9em;
+            text-decoration: none;
+            padding: 10px 20px; /* Increased padding for substantial look */
+            border-radius: 25px; /* Slightly more rounded */
+            background-color: #A00000; /* Darker Red button */
+            transition: background-color 0.2s, transform 0.2s;
+            text-transform: uppercase; /* Added for a professional navigation look */
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3); /* Subtle button shadow */
+        }
 
-    main {
-      background: url('https://via.placeholder.com/1200x800?text=Desert+Texture') center/cover no-repeat;
-      padding: 40px 20px;
-      color: #000;
-    }
+        .nav-link:hover {
+            background-color: #FF8C00; /* Bright Orange hover */
+            transform: scale(1.05);
+        }
 
-    section {
-      background-color: rgba(255, 255, 255, 0.85);
-      padding: 20px;
-      margin-bottom: 30px;
-      border-radius: 8px;
-    }
+        /* Main Content Layout */
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        
+        /* Section Styling */
+        .section-box {
+            background-color: #FFFFFF;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            border-left: 8px solid #DD6B20; /* Deep Orange accent */
+        }
 
-    figure {
-      margin: 10px 0;
-    }
+        .section-box h2 {
+            color: #FF6600;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #FFDAB9;
+        }
+        
+        /* Media and Flex Containers (Used for two-column layouts) */
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
 
-    img {
-      width: 100%;
-      max-width: 400px;
-      border: 1px solid #ccc;
-    }
+        .grid-item-half {
+            flex: 1 1 45%; /* Two items per row on larger screens */
+            padding: 15px;
+            background-color: #FFF3E0; /* Very light orange accent */
+            border-radius: 8px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
 
-    figcaption {
-      text-align: center;
-      font-style: italic;
-    }
+        .grid-item-quarter {
+            flex: 1 1 22%; /* Four items per row on larger screens */
+            min-width: 100px; /* Ensure images don't get too small */
+        }
 
-    mark {
-      background-color: #ffff99;
-    }
-
-    aside {
-      background-color: #fdf5e6;
-      padding: 15px;
-      border-left: 5px solid #d2691e;
-      margin: 30px 0;
-    }
-
-    .blog-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 30px;
-    }
-
-    article {
-      background-color: #ffffff;
-      border: 1px solid #d2b48c;
-      border-radius: 8px;
-      width: 300px;
-      padding: 15px;
-      box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
-    }
-
-    article img {
-      width: 100%;
-      border-radius: 6px;
-    }
-
-    article h2 {
-      font-size: 1.2em;
-      margin: 10px 0 5px;
-      color: #d2691e;
-    }
-
-    article p {
-      font-size: 0.95em;
-      color: #333;
-    }
-
-    footer {
-      background-color: #f4a460;
-      text-align: center;
-      padding: 20px;
-    }
-  </style>
+        .img-responsive {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+        }
+        
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+            .grid-item-half, .grid-item-quarter {
+                flex-basis: 100%; /* Stack items on small screens */
+            }
+            .section-box h2 {
+                font-size: 1.5em;
+            }
+        }
+        
+        /* Footer Styling */
+        footer {
+            background-color: #CC0000;
+            color: #FFFFCC;
+            padding: 20px 10px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>Family Trip to Jaisalmer, Rajasthan</h1>
-    <p><strong>By Megh K Patel</strong></p>
-  </header>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="max-width-7xl-like">
+            <h1 class="festive-title">
+                Deepavali: Triumph of Light
+            </h1>
+        </div>
+        
+        <!-- Navigation Bar with Sections -->
+        <nav id="main-nav">
+            <div id="nav-links">
+                <a href="#snacks" class="nav-link">Snacks</a>
+                <a href="#crackers" class="nav-link">Crackers</a>
+                <a href="#decoration" class="nav-link">Home Decoration</a>
+                <a href="#killa" class="nav-link">Killa & Lantern</a>
+                <a href="#rangoli" class="nav-link">Makino Rangoli</a>
+            </div>
+        </nav>
+    </header>
 
-  <nav>
-    <a href="#intro">Intro</a>
-    <a href="#explore">Explore</a>
-    <a href="#adventure">Adventure</a>
-    <a href="#culture">Culture</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#reflection">Reflection</a>
-  </nav>
+    <main>
 
-  <main>
-    <section id="intro">
-      <h2>Diwali Vacation Begins</h2>
-      <p>
-        This Diwali, our family set out on a magical journey to the <mark>Golden City of Jaisalmer</mark>. 
-        The excitement was in the air as we packed our bags and hit the road. The drive through Rajasthan was filled with scenic beauty, rustic charm, and endless stretches of desert.
-      </p>
-      <p>
-        We arrived at a beautiful resort just before sunset. The first thing we did? Jumped into the <mark>swimming pool</mark> to cool off and relax after the long journey.
-      </p>
-    </section>
+        <!-- Introduction & Personal Touch -->
+        <section id="intro" style="text-align: center; padding: 25px; background-color: #FFFAEC; border-radius: 10px; box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);">
+            <h2 class="festive-title" style="color: #CC0000; font-size: 1.8em; margin-bottom: 10px;">Our Diwali Story: A Personal Celebration!</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">
+                Diwali, for our family, is not just a festival; it's the warmth of togetherness, the sparkle of tradition, and the sweet taste of homemade joy. This page captures the vibrant spirit of how we celebrate the victory of light over darkness every year.
+            </p>
+            <div class="grid-container">
+                <!-- Personal Photo Placeholders -->
+                <div class="grid-item-quarter">
+                    <img src="./puja.jpg" alt="Diwali Pooja photo" class="img-responsive">
+                </div>
+                <div class="grid-item-quarter">
+                    <img src="./cloath.png" alt="Wearing new Diwali clothes" class="img-responsive">
+                </div>
+                <div class="grid-item-quarter">
+                    <img src="./diya.jpg" alt="Row of lit Diyas" class="img-responsive">
+                </div>
+                <div class="grid-item-quarter">
+                    <img src="./box.png" alt="Exchanging gifts" class="img-responsive">
+                </div>
+            </div>
+        </section>
 
-    <section id="explore">
-      <h2>Exploring the Golden City</h2>
-      <p>
-        Our exploration began with the majestic <mark>Jaisalmer Fort</mark>, a golden sandstone marvel that seemed to rise from the desert itself. 
-        Inside, we wandered through narrow alleys, visited ancient temples, and shopped for local handicrafts.
-      </p>
-      <p>
-        We also visited the famous <mark>Patwon Ki Haveli</mark>, where the intricate carvings and historical stories transported us to another era.
-      </p>
-    </section>
+        <!-- 1. Snacks (Mithai and Savories) -->
+        <section id="snacks" class="section-box">
+            <h2>🍪 Traditional Diwali Snacks & Mithai</h2>
+            <p style="margin-bottom: 20px;">Gujarati Diwali treats include savory snacks like chakli, fafda, and sev, known for their crispy texture and spicy-salty taste. Sweet delicacies are equally important, with mohanthal, a rich gram flour fudge, being a staple. Other popular sweets include besan ladoo, chikki, and milk-based treats like shrikhand and basundi, which are often enjoyed with festive meals or as a special dessert. </p>
+            
+            <div class="grid-container">
+                <div class="grid-item-half">
+                    <img src="./snacks.jpg" alt="Image of Besan Ladoo" class="img-responsive" style="margin-top: 10px;">
+                </div>
+                <div class="grid-item-half">
+                    <h3 style="color: #CC0000; margin-bottom: 8px;">Audio: The Joy of Cooking</h3>
+                    <p style="font-size: 0.9em; margin-bottom: 10px;">Listen to the comforting sizzle of <em>Jalebi</em> being fried in the background—the sound of a bustling Diwali kitchen!</p>
+                    <!-- Audio Element -->
+                    <audio controls style="width: 100%; background-color: #FFDAB9; padding: 5px; border-radius: 4px;">
+                        <source src="mock_diwali_cooking_sizzle.mp3" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+        </section>
 
-    <section id="adventure">
-      <h2>Adventure in the Desert</h2>
-      <p>
-        The next day was packed with adventure. We went <mark>boating</mark> at the serene Gadisar Lake, surrounded by temples and ghats. 
-        Then came the highlight—<mark>paragliding</mark> over the golden dunes! The view from above was breathtaking.
-      </p>
-      <p>
-        As the sun dipped below the horizon, we headed to our desert camp. We spent the night <mark>camping under the stars</mark>, sharing stories around a bonfire and enjoying the peaceful desert night.
-      </p>
-    </section>
+        <!-- 2. Crackers (Symbolic Fireworks) -->
+        <section id="crackers" class="section-box">
+            <h2>💥 The Crackle and Pop of Diwali</h2>
+            <p style="margin-bottom: 20px;">While we prioritize safe and sound-conscious celebrations, fireworks are traditionally used to ward off evil spirits and signify prosperity. We stick to sparklers (phuljhari) and environmentally friendly options that light up the night sky safely!</p>
+            
+            <img src="./megh.png" alt="Image of sparklers" class="img-responsive" style="margin-bottom: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
+            
+            <div style="text-align: center; font-size: 0.9em; font-style: italic; color: #555;">
+                Safety First: Always celebrate responsibly and keep pets safe during the fireworks display!
+            </div>
+        </section>
 
-    <section id="culture">
-      <h2>Cultural Delights</h2>
-      <p>
-        One of the most memorable parts of our trip was attending a <mark>cultural music event</mark>. 
-        Folk musicians played traditional instruments while dancers performed in colorful attire. 
-        The rhythm, the colors, and the energy made us feel truly immersed in Rajasthani culture.
-      </p>
-    </section>
+        <!-- 3. Home Decoration -->
+        <section id="decoration" class="section-box">
+            <h2>✨ Lighting Up Our Home: Diyas and Lights</h2>
+            <p style="margin-bottom: 20px;">The word <em>Deepavali</em> means 'Row of Lights' (<em>Deepa</em> = light, <em>avali</em> = row). We meticulously clean the entire house and illuminate every corner with earthen lamps (diyas) and string lights (torans) to welcome the goddess Lakshmi.</p>
+            
+            <div class="grid-container">
+                <div style="flex: 1 1 30%;">
+                    <img src="./rangoli.png" alt="Diwali Diyas" class="img-responsive" style="height: 100%; object-fit: cover;">
+                </div>
+                <div style="flex: 1 1 60%;">
+                    <h3 style="color: #CC0000; margin-bottom: 8px;">Video: Decorating the House</h3>
+                    <p style="font-size: 0.9em; margin-bottom: 10px;">Watch a short clip of our home being decorated with colorful LED string lights and hanging lanterns.</p>
+                    <!-- Video Embed Placeholder (Aspect Ratio CSS for responsiveness) -->
+                    <div style="position: relative; padding-bottom: 56.25%; /* 16:9 Aspect Ratio */ height: 0; overflow: hidden; max-width: 100%;">
+                        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px;" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section class="blog-container">
-    <article>
-      <img src="./2.jpg" alt="Jaisalmer Fort">
-      <h2>Exploring Jaisalmer Fort</h2>
-      <p>We wandered through the golden walls of Jaisalmer Fort, discovering ancient temples and vibrant markets.</p>
-    </article>
+        <!-- 4. Killa (Fort) and Lantern (Akash Kandil) -->
+        <section id="killa" class="section-box">
+            <h2>Lantern: Art and Heritage</h2>
+            <p style="margin-bottom: 20px;">The <em>Akash Kandil</em> (Sky Lantern) is a gorgeous, handmade paper lantern hung outside, illuminating the night sky.</p>
+            
+            <div class="grid-container">
+                <div style="flex: 1 1 30%;">
+                    <img src="./make.png" alt="Image of a colorful Akash Kandil" class="img-responsive" style="object-fit: cover;">
+                </div>
+            </div>
+        </section>
+        
+        <!-- 5. Makino Rangoli (Making a Rangoli) -->
+        <section id="rangoli" class="section-box">
+            <h2>🎨 Making the Rangoli: Colors of Joy</h2>
+            <p style="margin-bottom: 20px;">Rangoli, a beautiful floor art created using colored powders, flowers, or rice, is drawn at the entrance of the home. It is believed to be a sacred welcoming area for the Gods, especially Lakshmi. Our family loves creating intricate, bright patterns!</p>
+            
+            <img src="./make2.png" alt="Image of a vibrant Rangoli design" class="img-responsive" style="box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
+        </section>
+        
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="max-width-7xl-like">
+            <p class="festive-title" style="font-size: 1.2em; margin-bottom: 5px;">&copy; School Project 2025 | Happy Diwali to all!</p>
+            <p style="font-size: 0.9em;">The information on this page celebrates the traditions and joy of Diwali.</p>
+        </div>
+    </footer>
 
-    <article>
-      <img src="./4.jpg" alt="Desert Adventure">
-      <h2>Dune Driving</h2>
-      <p>Thrilling sensory experience, with the wind whipping through my hair, open landscape stretched out endlessly before me. </p>
-    </article>
-
-    <article>
-      <img src="./5.jpg" alt="Camping">
-      <h2>Paragliding & Boating</h2>
-      <p>Thrill met serenity as we soared above the dunes and glided across Gadisar Lake in a peaceful boat ride.</p>
-    </article>
-  </section>
-
-    <aside>
-      <h3>Fun Fact</h3>
-      <p>Jaisalmer is called the "Golden City" because of the yellow sandstone used in its architecture, which glows at sunset.</p>
-    </aside>
-
-    <section id="reflection">
-      <h2>Final Thoughts</h2>
-      <p>
-        This trip was more than just a vacation—it was a journey full of discovery, bonding, and joy. 
-        From thrilling adventures to peaceful moments under the stars, Jaisalmer gave us memories we’ll cherish forever.
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Family Travel Journal | Created by Megh K Patel</p>
-  </footer>
-
+    <!-- JavaScript for smooth scrolling (optional but kept as it's basic JS) -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
